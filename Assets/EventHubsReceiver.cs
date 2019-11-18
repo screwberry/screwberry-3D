@@ -49,8 +49,7 @@ public class EventHubsReceiver : MonoBehaviour
                     var data = JObject.Parse(Encoding.UTF8.GetString(eventData.Body.Array));
                     var label = GameObject.Find(data["alias"].ToString()).GetComponent<Text>();
                     label.text = data["alias"]
-                    + "\n" + data["temperature"].ToString() + " °C"
-                    + "\n" + data["humidity"].ToString() + "%";
+                    + "\n" + data["temperature"].ToString() + " °C / " + data["humidity"].ToString() + "%";
                     Debug.Log(data);
                 }
             }
