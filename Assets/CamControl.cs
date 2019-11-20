@@ -7,7 +7,9 @@ public class CamControl : MonoBehaviour {
 	private float angle;
 
 	void Update() {
-		angle += camSpeed * Input.GetAxis("Mouse X");
+		//angle += camSpeed * Input.GetAxis("Mouse X");
+		angle += camSpeed * 0.02f;
+		
 		Vector3 targetPos = new Vector3(0f, angle, 0f);
 		Vector3 smoothPos = Vector3.Lerp(transform.eulerAngles, targetPos, smoothing);
 		transform.eulerAngles = smoothPos;
